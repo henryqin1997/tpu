@@ -448,7 +448,7 @@ def resnet_model_fn(features, labels, mode, params):
         """
 
         # gs = gs[0]
-        gs_unpacked = tf.unpack(gs)
+        gs_unpacked = tf.unstack(gs)
         # Host call fns are executed params['iterations_per_loop'] times after
         # one TPU loop is finished, setting max_queue value to the same as
         # number of iterations will make the summary writer only flush the data
