@@ -52,6 +52,6 @@ class OneCycleScheduler():
 
 
 def lrs(step,total_step):
-    low = math.log2(1)
-    high = math.log2(100)
+    low = math.log2(0.1)
+    high = math.log2(20)
     return 2**(low+(high-low)*step/total_step)
