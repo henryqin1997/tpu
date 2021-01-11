@@ -273,8 +273,9 @@ def learning_rate_schedule(params, current_epoch):
   for mult, start_epoch in lr_schedule:
     decay_rate = tf.where(current_epoch < start_epoch,
                           decay_rate, scaled_lr * mult)
+  print(decay_rate)
+  print(type(decay_rate))
   return decay_rate
-
 
 def resnet_model_fn(features, labels, mode, params):
   """The model_fn for ResNet to be used with TPUEstimator.
