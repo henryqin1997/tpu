@@ -453,13 +453,14 @@ def resnet_model_fn(features, labels, mode, params):
         # to storage once per loop.
         with tf2.summary.create_file_writer(
             FLAGS.model_dir,
-            #max_queue=params['iterations_per_loop']
-            max_queue=1
+            # max_queue=params['iterations_per_loop']
+            max_queue=2
             ).as_default():
           with tf2.summary.record_if(True):
-            tf2.summary.scalar('loss', loss[0], step=gs)
-            tf2.summary.scalar('learning_rate', lr[0], step=gs)
-            tf2.summary.scalar('current_epoch', ce[0], step=gs)
+            for i,g in enumerate(gs):
+              tf2.summary.scalar('loss', loss[i], step=g)
+              tf2.summary.scalar('learning_rate', lr[i], step=g)
+              tf2.summary.scalar('current_epoch', ce[i], step=g)
           return tf.summary.all_v2_summary_ops()
 
       # To log the loss, current learning rate, and epoch for Tensorboard, the
