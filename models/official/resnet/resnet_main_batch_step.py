@@ -448,17 +448,17 @@ def resnet_model_fn(features, labels, mode, params):
         """
 
         # gs = gs[0]
-        gs_unpacked = tf.unstack(gs)
         # Host call fns are executed params['iterations_per_loop'] times after
         # one TPU loop is finished, setting max_queue value to the same as
         # number of iterations will make the summary writer only flush the data
         # to storage once per loop.
         with tf2.summary.create_file_writer(
             FLAGS.model_dir,
-            # max_queue=params['iterations_per_loop']
-            max_queue=3
+            max_queue=params['iterations_per_loop']
+            # max_queue=3
             ).as_default():
           with tf2.summary.record_if(True):
+              gs_unpacked = tf.unstack(gs)
               for i, g in enumerate(gs_unpacked):
                 tf2.summary.scalar('loss', loss[i], step=g)
                 tf2.summary.scalar('learning_rate', lr[i], step=g)
