@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0f42eda7-8d38-49c6-a6c2-73804d650f27" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/models/official/resnet/run.sh" afterPath="$PROJECT_DIR$/models/official/resnet/run.sh" />
-    </list>
+    <list default="true" id="0f42eda7-8d38-49c6-a6c2-73804d650f27" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,8 +26,8 @@
       <file leaf-file-name="resnet_main_batch_step.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/official/resnet/resnet_main_batch_step.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="617" column="30" lean-forward="true" selection-start-line="617" selection-start-column="30" selection-end-line="617" selection-end-column="30" />
+            <state relative-caret-position="203">
+              <caret line="753" column="76" lean-forward="true" selection-start-line="753" selection-start-column="76" selection-end-line="753" selection-end-column="76" />
               <folding>
                 <element signature="e#740#778#0" expanded="true" />
               </folding>
@@ -65,28 +62,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="591">
               <caret line="692" column="32" lean-forward="false" selection-start-line="692" selection-start-column="32" selection-end-line="692" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="lars_util.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/models/official/resnet/lars_util.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="74" column="18" lean-forward="false" selection-start-line="74" selection-start-column="18" selection-end-line="74" selection-end-column="18" />
-              <folding>
-                <element signature="e#757#795#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="imagenet_input.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/models/official/resnet/imagenet_input.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="41">
-              <caret line="366" column="61" lean-forward="false" selection-start-line="366" selection-start-column="44" selection-end-line="366" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -347,8 +322,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models/official/resnet/resnet_main_batch_step.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="617" column="30" lean-forward="true" selection-start-line="617" selection-start-column="30" selection-end-line="617" selection-end-column="30" />
+        <state relative-caret-position="203">
+          <caret line="753" column="76" lean-forward="true" selection-start-line="753" selection-start-column="76" selection-end-line="753" selection-end-column="76" />
           <folding>
             <element signature="e#740#778#0" expanded="true" />
           </folding>
