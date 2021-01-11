@@ -405,7 +405,7 @@ def resnet_model_fn(features, labels, mode, params):
       # learning_rate = learning_rate_schedule(params, current_epoch)
 
       #for lr range test
-      learning_rate = onecycle.lrs(global_step,params['train_steps'])
+      learning_rate = onecycle.lrs(tf.cast(global_step,tf.float32),params['train_steps'])
 
       optimizer = tf.train.MomentumOptimizer(
           learning_rate=learning_rate,

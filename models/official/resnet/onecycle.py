@@ -54,4 +54,4 @@ class OneCycleScheduler():
 def lrs(step,total_step):
     low = math.log2(1e-5)
     high = math.log2(10)
-    return tf.constant(2**(low+(high-low)*step/total_step),dtype=tf.float64)
+    return 2**(low+(high-low)*step/total_step)
