@@ -453,7 +453,9 @@ def resnet_model_fn(features, labels, mode, params):
         # to storage once per loop.
         with tf2.summary.create_file_writer(
             FLAGS.model_dir,
-            max_queue=params['iterations_per_loop']).as_default():
+            #max_queue=params['iterations_per_loop']
+            max_queue=1
+            ).as_default():
           with tf2.summary.record_if(True):
             tf2.summary.scalar('loss', loss[0], step=gs)
             tf2.summary.scalar('learning_rate', lr[0], step=gs)
