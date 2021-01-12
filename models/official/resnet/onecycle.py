@@ -44,6 +44,7 @@ class OneCycleScheduler():
         self.lrs = []
         self.moms = []
 
+    @tf.function
     def getlrmom(self,step):
         return tf.where(step<self.phase_1_steps,
             # tf.constant(self.phases[0][0].getval(step),dtype=tf.float32),tf.constant(self.phases[0][1].getval(step),dtype=tf.float32),
