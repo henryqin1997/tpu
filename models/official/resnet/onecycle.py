@@ -45,10 +45,9 @@ class OneCycleScheduler():
         self.moms = []
 
     def getlrmom(self,step):
-        if step<self.phase_1_steps:
-            return tf.constant(self.phases[0][0].getval(step),dtype=tf.float32),tf.constant(self.phases[0][1].getval(step),dtype=tf.float32)
-        else:
-            return tf.constant(self.phases[1][0].getval(step-self.phase_1_steps),dtype=tf.float32),tf.constant(self.phases[1][1].getval(step-self.phase_1_steps),dtype=tf.float32)
+        return tf.where(step<self.phase_1_steps,
+            tf.constant(self.phases[0][0].getval(step),dtype=tf.float32),tf.constant(self.phases[0][1].getval(step),dtype=tf.float32),
+            tf.constant(self.phases[1][0].getval(step-self.phase_1_steps),dtype=tf.float32),tf.constant(self.phases[1][1].getval(step-self.phase_1_steps),dtype=tf.float32))
 
 
 def lrs(step,total_step):

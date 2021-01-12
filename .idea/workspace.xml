@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0f42eda7-8d38-49c6-a6c2-73804d650f27" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/models/official/resnet/run.sh" afterPath="$PROJECT_DIR$/models/official/resnet/run.sh" />
+      <change beforePath="$PROJECT_DIR$/models/official/resnet/onecycle.py" afterPath="$PROJECT_DIR$/models/official/resnet/onecycle.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,8 +17,8 @@
       <file leaf-file-name="resnet_main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/official/resnet/resnet_main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="265" column="0" lean-forward="true" selection-start-line="265" selection-start-column="0" selection-end-line="265" selection-end-column="0" />
+            <state relative-caret-position="167">
+              <caret line="418" column="13" lean-forward="false" selection-start-line="418" selection-start-column="12" selection-end-line="418" selection-end-column="13" />
               <folding>
                 <element signature="e#740#778#0" expanded="true" />
               </folding>
@@ -30,7 +30,7 @@
         <entry file="file://$PROJECT_DIR$/models/official/resnet/resnet_main_batch_step.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="167">
-              <caret line="113" column="9" lean-forward="false" selection-start-line="113" selection-start-column="5" selection-end-line="113" selection-end-column="9" />
+              <caret line="407" column="30" lean-forward="false" selection-start-line="407" selection-start-column="24" selection-end-line="407" selection-end-column="30" />
               <folding>
                 <element signature="e#740#778#0" expanded="true" />
               </folding>
@@ -38,11 +38,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="onecycle.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="onecycle.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/models/official/resnet/onecycle.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="40" column="72" lean-forward="true" selection-start-line="40" selection-start-column="72" selection-end-line="40" selection-end-column="72" />
+            <state relative-caret-position="293">
+              <caret line="47" column="48" lean-forward="false" selection-start-line="47" selection-start-column="48" selection-end-line="47" selection-end-column="48" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -60,11 +60,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="run.sh" pinned="false" current-in-tab="true">
+      <file leaf-file-name="run.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/official/resnet/run.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
-              <caret line="6" column="127" lean-forward="false" selection-start-line="6" selection-start-column="127" selection-end-line="6" selection-end-column="127" />
+              <caret line="6" column="142" lean-forward="true" selection-start-line="6" selection-start-column="142" selection-end-line="6" selection-end-column="142" />
               <folding />
             </state>
           </provider>
@@ -84,7 +84,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>resnet_model_fn</find>
       <find>learning_rate_schedule</find>
       <find>imagenet_input</find>
       <find>tf.estimator.tpu.TPUEstimator</find>
@@ -99,19 +98,22 @@
       <find>loss</find>
       <find>batch</find>
       <find>epoch</find>
-      <find>train_steps</find>
       <find>params_dict</find>
       <find>data_dir</find>
       <find>optimizer</find>
       <find>FAKE_DATA_DIR</find>
-      <find>lrs</find>
       <find>params</find>
       <find>checkpoint</find>
       <find>log_step_count_steps</find>
       <find>create_file</find>
-      <find>phases</find>
-      <find>host</find>
       <find>mode</find>
+      <find>lrs</find>
+      <find>phases</find>
+      <find>train_steps</find>
+      <find>host</find>
+      <find>log</find>
+      <find>tf.cast</find>
+      <find>onecyc</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -121,10 +123,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/models/official/resnet/resnet_main.py" />
-        <option value="$PROJECT_DIR$/models/official/resnet/resnet_main_batch_step.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/models/official/resnet/onecycle.py" />
         <option value="$PROJECT_DIR$/models/official/resnet/run.sh" />
+        <option value="$PROJECT_DIR$/models/official/resnet/resnet_main_batch_step.py" />
+        <option value="$PROJECT_DIR$/models/official/resnet/onecycle.py" />
       </list>
     </option>
   </component>
@@ -231,6 +233,14 @@
       <option name="presentableId" value="Default" />
       <updated>1610243094504</updated>
     </task>
+    <task id="LOCAL-00001" summary="updata">
+      <created>1610412558509</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1610412558509</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -265,6 +275,10 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="updata" />
+    <option name="LAST_COMMIT_MESSAGE" value="updata" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <option name="time" value="1" />
@@ -298,28 +312,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/official/resnet/resnet_main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="265" column="0" lean-forward="true" selection-start-line="265" selection-start-column="0" selection-end-line="265" selection-end-column="0" />
-          <folding>
-            <element signature="e#740#778#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/hyperparameters/params_dict.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-171">
           <caret line="39" column="3" lean-forward="true" selection-start-line="39" selection-start-column="3" selection-end-line="39" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
           <folding />
         </state>
       </provider>
@@ -332,12 +328,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/official/resnet/onecycle.py">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="40" column="72" lean-forward="true" selection-start-line="40" selection-start-column="72" selection-end-line="40" selection-end-column="72" />
+        <state relative-caret-position="30">
+          <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/official/resnet/run.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="142" lean-forward="true" selection-start-line="6" selection-start-column="142" selection-end-line="6" selection-end-column="142" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/official/resnet/resnet_main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="418" column="13" lean-forward="false" selection-start-line="418" selection-start-column="12" selection-end-line="418" selection-end-column="13" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#740#778#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -345,18 +357,20 @@
     <entry file="file://$PROJECT_DIR$/models/official/resnet/resnet_main_batch_step.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="167">
-          <caret line="113" column="9" lean-forward="false" selection-start-line="113" selection-start-column="5" selection-end-line="113" selection-end-column="9" />
+          <caret line="407" column="30" lean-forward="false" selection-start-line="407" selection-start-column="24" selection-end-line="407" selection-end-column="30" />
           <folding>
             <element signature="e#740#778#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/official/resnet/run.sh">
+    <entry file="file://$PROJECT_DIR$/models/official/resnet/onecycle.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="127" lean-forward="false" selection-start-line="6" selection-start-column="127" selection-end-line="6" selection-end-column="127" />
-          <folding />
+        <state relative-caret-position="293">
+          <caret line="47" column="48" lean-forward="false" selection-start-line="47" selection-start-column="48" selection-end-line="47" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
