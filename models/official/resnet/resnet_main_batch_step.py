@@ -405,16 +405,16 @@ def resnet_model_fn(features, labels, mode, params):
       # learning_rate = learning_rate_schedule(params, current_epoch)
 
       #for lr range test
-      # learning_rate = onecycle.lrs(tf.cast(global_step,tf.float32),params['train_steps'])
+      learning_rate = onecycle.lrs(tf.cast(global_step,tf.float32),params['train_steps'])
 
       #for onecycle scheduler
-      onecycle_sche = onecycle.OneCycleScheduler(10,params['train_steps'])
-      learning_rate,momen = onecycle_sche.getlrmom(tf.cast(global_step,dtype=tf.float32))
+      # onecycle_sche = onecycle.OneCycleScheduler(10,params['train_steps'])
+      # learning_rate,momen = onecycle_sche.getlrmom(tf.cast(global_step,dtype=tf.float32))
 
       optimizer = tf.train.MomentumOptimizer(
           learning_rate=learning_rate,
-          # momentum=params['momentum'],
-          momentum=momen,
+          momentum=params['momentum'],
+          # momentum=momen,
           use_nesterov=True)
     if params['use_tpu']:
       # When using TPU, wrap the optimizer with CrossShardOptimizer which
@@ -458,18 +458,18 @@ def resnet_model_fn(features, labels, mode, params):
         # to storage once per loop.
         with tf2.summary.create_file_writer(
             FLAGS.model_dir,
-            # max_queue=params['iterations_per_loop']
-            max_queue=3
+            max_queue=params['iterations_per_loop']
+            # max_queue=3
             ).as_default():
           with tf2.summary.record_if(True):
-              # gs_unpacked = tf.unstack(gs)
-              # for i, g in enumerate(gs_unpacked):
-              #   tf2.summary.scalar('loss', loss[i], step=g)
-              #   tf2.summary.scalar('learning_rate', lr[i], step=g)
-              #   tf2.summary.scalar('current_epoch', ce[i], step=g)
-              tf2.summary.scalar('loss', loss[0], step=gs)
-              tf2.summary.scalar('learning_rate', lr[0], step=gs)
-              tf2.summary.scalar('current_epoch', ce[0], step=gs)
+              gs_unpacked = tf.unstack(gs)
+              for i, g in enumerate(gs_unpacked):
+                tf2.summary.scalar('loss', loss[i], step=g)
+                tf2.summary.scalar('learning_rate', lr[i], step=g)
+                tf2.summary.scalar('current_epoch', ce[i], step=g)
+              # tf2.summary.scalar('loss', loss[0], step=gs)
+              # tf2.summary.scalar('learning_rate', lr[0], step=gs)
+              # tf2.summary.scalar('current_epoch', ce[0], step=gs)
           return tf.summary.all_v2_summary_ops()
 
       # To log the loss, current learning rate, and epoch for Tensorboard, the
