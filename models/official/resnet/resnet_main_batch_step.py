@@ -451,7 +451,7 @@ def resnet_model_fn(features, labels, mode, params):
           List of summary ops to run on the CPU host.
         """
 
-        gs = gs[0]
+        # gs = gs[0]
         # Host call fns are executed params['iterations_per_loop'] times after
         # one TPU loop is finished, setting max_queue value to the same as
         # number of iterations will make the summary writer only flush the data
