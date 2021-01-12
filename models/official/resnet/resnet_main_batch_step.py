@@ -405,12 +405,16 @@ def resnet_model_fn(features, labels, mode, params):
       # learning_rate = learning_rate_schedule(params, current_epoch)
 
       #for lr range test
-      learning_rate = onecycle.lrs(tf.cast(global_step,tf.float32),params['train_steps'])
+      # learning_rate = onecycle.lrs(tf.cast(global_step,tf.float32),params['train_steps'])
+
+      #for onecycle scheduler
+      onecycle_sche = onecycle.OneCycleScheduler(10,params['train_steps'])
+      learning_rate,momen = onecycle_sche.getlrmom(tf.cast(global_step))
 
       optimizer = tf.train.MomentumOptimizer(
           learning_rate=learning_rate,
-          momentum=params['momentum'],
-          # momentum=momen,
+          # momentum=params['momentum'],
+          momentum=momen,
           use_nesterov=True)
     if params['use_tpu']:
       # When using TPU, wrap the optimizer with CrossShardOptimizer which
