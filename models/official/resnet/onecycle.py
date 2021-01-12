@@ -12,11 +12,11 @@ class CosineAnnealer:
 
     def step(self):
         self.n += 1
-        cos = np.cos(np.pi * (self.n / self.steps)) + 1
+        cos = tf.math.cos(np.pi * (self.n / self.steps)) + 1
         return self.end + (self.start - self.end) / 2. * cos
 
     def getval(self,step):
-        cos = np.cos(np.pi * (step / self.steps)) + 1
+        cos = tf.math.cos(np.pi * (step / self.steps)) + 1
         return self.end + (self.start - self.end) / 2. * cos
 
 class OneCycleScheduler():
