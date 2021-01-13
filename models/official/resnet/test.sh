@@ -1,6 +1,6 @@
 export STORAGE_BUCKET=gs://ziheng_store
 export MODEL_DIR=${STORAGE_BUCKET}/test
-export PYTHONPATH="$PYTHONPATH:/tpu/models"
+export PYTHONPATH="$PYTHONPATH:~/tpu/models"
 export TPU_NAME=ziheng
 export DATA_DIR=gs://imagenet2012/imagenet-2012-tfrecord/
 export ACCELERATOR_TYPE=v3-1024
