@@ -1,4 +1,4 @@
-export PYTHONPATH="$PYTHONPATH:~/tpu/models"
+export PYTHONPATH="$PYTHONPATH:/home/supercomputer_ai/tpu/models"
 export TPU_NAME=ziheng
 export MODEL_DIR=gs://ziheng_store/onecycle
 export DATA_DIR=gs://imagenet2012/imagenet-2012-tfrecord/
