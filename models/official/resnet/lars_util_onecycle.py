@@ -28,13 +28,16 @@ FLAGS = flags.FLAGS
 def poly_rate_schedule(current_epoch,
                        params):
   """Handles linear scaling rule, gradual warmup, and LR decay.
+
   The learning rate starts at 0, then it increases linearly per step.  After
   FLAGS.poly_warmup_epochs, we reach the base learning rate (scaled to account
   for batch size). The learning rate is then decayed using a polynomial rate
   decay schedule with power 2.0.
+
   Args:
     current_epoch: `Tensor` for current epoch.
     params: Parameter set for Resnet model.
+
   Returns:
     A scaled `Tensor` for current learning rate.
   """
@@ -76,7 +79,7 @@ def poly_rate_schedule(current_epoch,
   return decay_rate
 
 
-def init_lars_optimizer(current_epoch, params):
+def init_lars_optimizer(current_epoch, params,learning_rate):
   """Initialize the LARS Optimizer."""
 
   try:
@@ -85,7 +88,7 @@ def init_lars_optimizer(current_epoch, params):
     logging.exception('LARS optimizer is not supported in TensorFlow 2.x')
     raise e
 
-  learning_rate = poly_rate_schedule(current_epoch, params)
+  # learning_rate = poly_rate_schedule(current_epoch, params)
   optimizer = LARSOptimizer(
       learning_rate,
       momentum=params['momentum'],

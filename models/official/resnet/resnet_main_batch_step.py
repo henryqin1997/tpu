@@ -36,7 +36,7 @@ from hyperparameters import common_tpu_flags
 from hyperparameters import flags_to_params
 from hyperparameters import params_dict
 from official.resnet import imagenet_input
-from official.resnet import lars_util
+from official.resnet import lars_util_onecycle
 from official.resnet import resnet_model
 from official.resnet.configs import resnet_config
 from official.resnet import onecycle
@@ -400,7 +400,7 @@ def resnet_model_fn(features, labels, mode, params):
     # and larger batch sizes.
     if params['enable_lars']:
       learning_rate = onecycle.lrs(tf.cast(global_step,tf.float32),params['train_steps'])
-      optimizer = lars_util.init_lars_optimizer(current_epoch, params,learning_rate)
+      optimizer = lars_util_onecycle.init_lars_optimizer(current_epoch, params,learning_rate)
     else:
       # learning_rate = learning_rate_schedule(params, current_epoch)
 
