@@ -79,7 +79,7 @@ def poly_rate_schedule(current_epoch,
   return decay_rate
 
 
-def init_lars_optimizer(current_epoch, params):
+def init_lars_optimizer(current_epoch, params,learning_rate):
   """Initialize the LARS Optimizer."""
 
   try:
@@ -88,7 +88,7 @@ def init_lars_optimizer(current_epoch, params):
     logging.exception('LARS optimizer is not supported in TensorFlow 2.x')
     raise e
 
-  learning_rate = poly_rate_schedule(current_epoch, params)
+  # learning_rate = poly_rate_schedule(current_epoch, params)
   optimizer = LARSOptimizer(
       learning_rate,
       momentum=params['momentum'],
