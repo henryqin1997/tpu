@@ -462,7 +462,7 @@ def resnet_model_fn(features, labels, mode, params):
             max_queue=params['iterations_per_loop']
             # max_queue=10
             ).as_default():
-          with tf2.summary.record_if(tf.equal(tf.mod(global_step,5),0)):
+          with tf2.summary.record_if(True):
               # gs_unpacked = tf.unstack(gs)
               # for i, g in enumerate(gs_unpacked):
               #   tf2.summary.scalar('loss', loss[i], step=g)
