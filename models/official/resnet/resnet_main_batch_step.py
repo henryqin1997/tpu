@@ -400,7 +400,7 @@ def resnet_model_fn(features, labels, mode, params):
     # and larger batch sizes.
     if params['enable_lars']:
       learning_rate = onecycle.lrs(tf.cast(global_step,tf.float32),params['train_steps'])
-      optimizer = lars_util_onecycle.init_lars_optimizer(current_epoch, params,learning_rate)
+      optimizer = lars_util_onecycle.init_lars_optimizer(current_epoch, params,learning_rate,params['momentum'])
     else:
       # learning_rate = learning_rate_schedule(params, current_epoch)
 

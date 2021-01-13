@@ -1,7 +1,11 @@
-export PYTHONPATH="$PYTHONPATH:/path/to/models"
+export PYTHONPATH="$PYTHONPATH:~/tpu/models"
 export TPU_NAME=ziheng
-export MODEL_DIR=gs://ziheng_store
+export MODEL_DIR=gs://ziheng_store/onecycle
 export DATA_DIR=gs://imagenet2012/imagenet-2012-tfrecord/
 gsutil -m rm -R -f $MODEL_DIR/*
-python3 official/resnet/resnet_main_onecycle.py —-tpu=ziheng --resnet_depth=50 --data_dir=$DATA_DIR --model_dir=$MODEL_DIR
-#--train_steps=200 --mode=train
+python3 resnet_main_onecycle.py —-tpu=ziheng \
+    --tpu=${TPU_NAME} \
+    --data_dir=${DATA_DIR} \
+    --model_dir=${MODEL_DIR} \
+    --train_steps=200 \
+    --config_file=configs/cloud/${ACCELERATOR_TYPE}.yaml
