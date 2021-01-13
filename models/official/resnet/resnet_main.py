@@ -246,18 +246,15 @@ def get_lr_schedule(train_steps, num_train_images, train_batch_size):
 
 def learning_rate_schedule(params, current_epoch):
   """Handles linear scaling rule, gradual warmup, and LR decay.
-
   The learning rate starts at 0, then it increases linearly per step.
   After 5 epochs we reach the base learning rate (scaled to account
     for batch size).
   After 30, 60 and 80 epochs the learning rate is divided by 10.
   After 90 epochs training stops and the LR is set to 0. This ensures
     that we train for exactly 90 epochs for reproducibility.
-
   Args:
     params: Python dict containing parameters for this run.
     current_epoch: `Tensor` for current epoch.
-
   Returns:
     A scaled `Tensor` for current learning rate.
   """
@@ -273,13 +270,11 @@ def learning_rate_schedule(params, current_epoch):
   for mult, start_epoch in lr_schedule:
     decay_rate = tf.where(current_epoch < start_epoch,
                           decay_rate, scaled_lr * mult)
-  print(decay_rate)
-  print(type(decay_rate))
   return decay_rate
+
 
 def resnet_model_fn(features, labels, mode, params):
   """The model_fn for ResNet to be used with TPUEstimator.
-
   Args:
     features: `Tensor` of batched images. If transpose_input is enabled, it
         is transposed to device layout and reshaped to 1D tensor.
@@ -288,7 +283,6 @@ def resnet_model_fn(features, labels, mode, params):
     params: `dict` of parameters passed to the model from the TPUEstimator,
         `params['batch_size']` is always provided and should be used as the
         effective batch size.
-
   Returns:
     A `TPUEstimatorSpec` for the model
   """
@@ -421,22 +415,18 @@ def resnet_model_fn(features, labels, mode, params):
     if not params['skip_host_call']:
       def host_call_fn(gs, loss, lr, ce):
         """Training host call. Creates scalar summaries for training metrics.
-
         This function is executed on the CPU and should not directly reference
         any Tensors in the rest of the `model_fn`. To pass Tensors from the
         model to the `metric_fn`, provide as part of the `host_call`. See
         https://www.tensorflow.org/api_docs/python/tf/estimator/tpu/TPUEstimatorSpec
         for more information.
-
         Arguments should match the list of `Tensor` objects passed as the second
         element in the tuple passed to `host_call`.
-
         Args:
           gs: `Tensor with shape `[batch]` for the global_step
           loss: `Tensor` with shape `[batch]` for the training loss.
           lr: `Tensor` with shape `[batch]` for the learning_rate.
           ce: `Tensor` with shape `[batch]` for the current_epoch.
-
         Returns:
           List of summary ops to run on the CPU host.
         """
@@ -474,20 +464,16 @@ def resnet_model_fn(features, labels, mode, params):
   if mode == tf.estimator.ModeKeys.EVAL:
     def metric_fn(labels, logits):
       """Evaluation metric function. Evaluates accuracy.
-
       This function is executed on the CPU and should not directly reference
       any Tensors in the rest of the `model_fn`. To pass Tensors from the model
       to the `metric_fn`, provide as part of the `eval_metrics`. See
       https://www.tensorflow.org/api_docs/python/tf/estimator/tpu/TPUEstimatorSpec
       for more information.
-
       Arguments should match the list of `Tensor` objects passed as the second
       element in the tuple passed to `eval_metrics`.
-
       Args:
         labels: `Tensor` with shape `[batch]`.
         logits: `Tensor` with shape `[batch, num_classes]`.
-
       Returns:
         A dict of the metrics to return from evaluation.
       """
@@ -513,14 +499,11 @@ def resnet_model_fn(features, labels, mode, params):
 
 def _verify_non_empty_string(value, field_name):
   """Ensures that a given proposed field value is a non-empty string.
-
   Args:
     value:  proposed value for the field.
     field_name:  string name of the field, e.g. `project`.
-
   Returns:
     The given value, provided that it passed the checks.
-
   Raises:
     ValueError:  the value is not a string, or is a blank string.
   """
@@ -535,7 +518,6 @@ def _verify_non_empty_string(value, field_name):
 
 def _select_tables_from_flags():
   """Construct training and evaluation Bigtable selections from flags.
-
   Returns:
     [training_selection, evaluation_selection]
   """

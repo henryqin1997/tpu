@@ -79,7 +79,7 @@ def poly_rate_schedule(current_epoch,
   return decay_rate
 
 
-def init_lars_optimizer(current_epoch, params,learning_rate):
+def init_lars_optimizer(current_epoch, params,learning_rate,momentum):
   """Initialize the LARS Optimizer."""
 
   try:
@@ -91,7 +91,7 @@ def init_lars_optimizer(current_epoch, params,learning_rate):
   # learning_rate = poly_rate_schedule(current_epoch, params)
   optimizer = LARSOptimizer(
       learning_rate,
-      momentum=params['momentum'],
+      momentum=momentum,
       weight_decay=params['weight_decay'],
       skip_list=['batch_normalization', 'evonorm', 'bias'])
   return optimizer
