@@ -793,9 +793,6 @@ def main(unused_argv):
 
 
 if __name__ == '__main__':
-  file = open("gs://ziheng_store/logtest.txt",'w+')
-  file.write('opened and write successfully')
-  file.close()
   tf.logging.set_verbosity(tf.logging.INFO)
   tf.disable_v2_behavior()
   app.run(main)
