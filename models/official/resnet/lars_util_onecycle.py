@@ -20,7 +20,7 @@ from __future__ import print_function
 
 from absl import flags
 from absl import logging
-import tensorflow.compat.v1 as tf
+import tensorflow as tf
 
 FLAGS = flags.FLAGS
 
@@ -81,15 +81,8 @@ def poly_rate_schedule(current_epoch,
 
 def init_lars_optimizer(current_epoch, params,learning_rate,momentum):
   """Initialize the LARS Optimizer."""
-
-  try:
-    from tf.contrib.opt import LARSOptimizer  # pylint: disable=g-import-not-at-top
-  except ImportError as e:
-    logging.exception('LARS optimizer is not supported in TensorFlow 2.x')
-    raise e
-
   # learning_rate = poly_rate_schedule(current_epoch, params)
-  optimizer = LARSOptimizer(
+  optimizer = tf.contrib.opt.LARSOptimizer(
       learning_rate,
       momentum=momentum,
       weight_decay=params['weight_decay'],
