@@ -9,3 +9,4 @@ python3 resnet_main_onecycle.py —-tpu=ziheng \
     --data_dir=${DATA_DIR} \
     --model_dir=${MODEL_DIR} \
     --config_file=configs/cloud/${ACCELERATOR_TYPE}.yaml
+#    --train_steps=200 \
