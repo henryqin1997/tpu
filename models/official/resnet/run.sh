@@ -1,6 +1,6 @@
-export PYTHONPATH="$PYTHONPATH:~/tpu/models"
+export PYTHONPATH="$PYTHONPATH:/home/supercomputer_ai/tpu/models"
 export TPU_NAME=v3-1024
-export MODEL_DIR=gs://ziheng_store/larssmall
+export MODEL_DIR=gs://ziheng_store/larsbig
 export DATA_DIR=gs://imagenet2012/imagenet-2012-tfrecord/
 export ACCELERATOR_TYPE=v3-1024
 gsutil -m rm -R -f $MODEL_DIR/*
