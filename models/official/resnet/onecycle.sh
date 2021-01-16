@@ -8,4 +8,5 @@ python3 resnet_main_onecycle.py \
     --tpu=${TPU_NAME} \
     --data_dir=${DATA_DIR} \
     --model_dir=${MODEL_DIR} \
+    --mode=train \
     --config_file=configs/cloud/${ACCELERATOR_TYPE}.yaml
