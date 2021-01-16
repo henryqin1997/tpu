@@ -459,8 +459,8 @@ def resnet_model_fn(features, labels, mode, params):
         with tf2.summary.create_file_writer(
             FLAGS.model_dir,
             # max_queue=params['iterations_per_loop']
-            max_queue=params[train_steps]
-            # max_queue=3
+            # max_queue=params[train_steps]
+            max_queue=3
             ).as_default():
           with tf2.summary.record_if(True):
               # gs_unpacked = tf.unstack(gs)
