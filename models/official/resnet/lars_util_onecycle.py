@@ -84,7 +84,7 @@ def init_lars_optimizer(current_epoch, params,learning_rate,momentum):
   # learning_rate = poly_rate_schedule(current_epoch, params)
   optimizer = tf.contrib.opt.LARSOptimizer(
       learning_rate,
-      momentum=momentum,
+      momentum=params['momentum'],
       weight_decay=params['weight_decay'],
       skip_list=['batch_normalization', 'evonorm', 'bias'])
   return optimizer

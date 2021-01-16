@@ -401,7 +401,7 @@ def resnet_model_fn(features, labels, mode, params):
     if params['enable_lars']:
       onecycle_sche = onecycle.OneCycleScheduler(tf.constant(25., dtype=tf.float32), params['train_steps'])
       learning_rate, momen = onecycle_sche.getlrmom(tf.cast(global_step, dtype=tf.float32))
-      optimizer = lars_util_onecycle.init_lars_optimizer(current_epoch, params,learning_rate,float(momen))
+      optimizer = lars_util_onecycle.init_lars_optimizer(current_epoch, params,learning_rate)
     else:
       # learning_rate = learning_rate_schedule(params, current_epoch)
 
