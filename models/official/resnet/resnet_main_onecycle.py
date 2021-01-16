@@ -399,7 +399,7 @@ def resnet_model_fn(features, labels, mode, params):
     # LARS is a large batch optimizer. LARS enables higher accuracy at batch 16K
     # and larger batch sizes.
     if params['enable_lars']:
-      onecycle_sche = onecycle.OneCycleScheduler(tf.constant(5., dtype=tf.float32), params['train_steps'])
+      onecycle_sche = onecycle.OneCycleScheduler(tf.constant(20., dtype=tf.float32), params['train_steps'])
       learning_rate, momen = onecycle_sche.getlrmom(tf.cast(global_step, dtype=tf.float32))
       optimizer = lars_util_onecycle.init_lars_optimizer(current_epoch, params,learning_rate,momen)
     else:
