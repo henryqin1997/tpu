@@ -9,5 +9,5 @@ python3 resnet_main_batch_step.py \
     --tpu=${TPU_NAME} \
     --data_dir=${DATA_DIR} \
     --model_dir=${MODEL_DIR} \
-    --train_steps=400 \
+    --train_steps=600 \
     --config_file=configs/cloud/${ACCELERATOR_TYPE}.yaml
