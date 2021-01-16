@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0f42eda7-8d38-49c6-a6c2-73804d650f27" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/models/official/resnet/onecycle.sh" afterPath="$PROJECT_DIR$/models/official/resnet/onecycle.sh" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -107,8 +106,8 @@
       <file leaf-file-name="eval.sh" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/models/official/resnet/eval.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="22" lean-forward="false" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
+            <state relative-caret-position="165">
+              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -284,13 +283,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1610243094504</updated>
-    </task>
-    <task id="LOCAL-00002" summary="updata">
-      <created>1610412878720</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1610412878720</updated>
     </task>
     <task id="LOCAL-00003" summary="updata">
       <created>1610413102463</created>
@@ -628,7 +620,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610785005700</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="updata">
+      <created>1610786408231</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1610786408231</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -864,8 +863,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models/official/resnet/eval.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="22" lean-forward="false" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
+        <state relative-caret-position="165">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding />
         </state>
       </provider>
