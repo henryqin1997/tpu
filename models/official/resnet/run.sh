@@ -10,4 +10,5 @@ python3 resnet_main_batch_step.py \
     --model_dir=${MODEL_DIR} \
     --train_steps=600 \
     --mode=train \
+    --skip_host_call = False \
     --config_file=configs/cloud/${ACCELERATOR_TYPE}.yaml
