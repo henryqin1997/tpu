@@ -79,7 +79,7 @@ def poly_rate_schedule(current_epoch,
   return decay_rate
 
 
-def init_lars_optimizer(current_epoch, params,learning_rate,momentum):
+def init_lars_optimizer(current_epoch, params,learning_rate):
   """Initialize the LARS Optimizer."""
   # learning_rate = poly_rate_schedule(current_epoch, params)
   optimizer = tf.contrib.opt.LARSOptimizer(
